@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App.Relatorio.Views.LoginInicialPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Nome completo :" FontSize="Small" />
+            <Entry x:Name="txtNome"   FontSize="Medium" />
+
+            <Picker x:Name="dropGrup" HorizontalOptions="FillAndExpand" Title="Selecione o seu grupo:">
+                <Picker.Items>
+                    <x:String>Filadelfia</x:String>
+                    <x:String>Salão do Reino</x:String>
+                    <x:String>Gileade</x:String>
+                    <x:String>Betel</x:String>
+                    <x:String>Paraiso</x:String>
+                    <x:String>Boas Novas</x:String>
+
+                </Picker.Items>
+            </Picker>
+            <StackLayout>
+                <Button x:Name="btGravar" Text="Salvar"
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="Center"
+                Clicked="btGravar_Clicked" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

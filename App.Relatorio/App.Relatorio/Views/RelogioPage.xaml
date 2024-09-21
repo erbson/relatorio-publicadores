@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App.Relatorio.Views.RelogioPage">
+   
+        <ContentPage.Content Command="{Binding CarregarCommand}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+            <RefreshView  Command="{Binding LoadItemsCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}">
+                <ScrollView Grid.Row="1">
+            <StackLayout Orientation="Vertical" Padding="30,24,30,24" Spacing="10" >
+                  
+                <StackLayout Orientation="Vertical" Padding="30,24,30,24" Spacing="10" >
+                    <Label x:Name="lbl_result" FontSize="Large" HorizontalOptions="Center" FontAttributes="Bold"
+                     />
+                </StackLayout>
+                <Button
+                x:Name="btn_Start"
+                Clicked="btn_Start_Clicked"
+                Text="Iniciar" />
+                <Button
+                x:Name="btn_Stop"
+                Clicked="btn_Stop_Clicked"
+                Text="Parar" />
+                    <Button
+                x:Name="btn_Reset"
+                Clicked="btn_Reset_Clicked"
+                Text="RESETAR" />
+                    <Button
+                x:Name="LancarRelatorio"
+                Clicked="LancarRelatorio_Clicked"
+                Text="Lançar no Relatorio" />
+            </StackLayout>
+              
+
+            </ScrollView>
+            </RefreshView>
+        </Grid>
+    </ContentPage.Content>
+   
+
+</ContentPage>

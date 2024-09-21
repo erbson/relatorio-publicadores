@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App.Relatorio.Views.ItemDetailPage"
+             Title="{Binding Title}">
+
+    <ScrollView>
+        <StackLayout Spacing="20" Padding="15">
+            <Label Text="Nome:" FontSize="Medium" />
+            <Label Text="{Binding TxtNome }" FontSize="Small"/>
+
+            <Label Text="Mes:" FontSize="Medium" />
+            <Label Text="{Binding TxtMes}" FontSize="Small"/>
+
+            <Label Text="Horas:" FontSize="Medium" />
+            <Label Text="{Binding TxtHoras}" FontSize="Small"/>
+
+            <Label Text="Publicações:" FontSize="Medium" />
+            <Label Text="{Binding TxtPublicacoes}" FontSize="Small"/>
+
+            <Label Text="Videos:" FontSize="Medium" />
+            <Label Text="{Binding TxtVideos}" FontSize="Small"/>
+
+            <Label Text="Revisitas:" FontSize="Medium" />
+            <Label Text="{Binding TxtRevisitas}" FontSize="Small"/>
+
+            <Label Text="Estudos:" FontSize="Medium" />
+            <Label Text="{Binding TxtEstudos}" FontSize="Small"/>
+
+            <Label Text="Observações:" FontSize="Medium" />
+            <Label Text="{Binding TxtObservacoes}" FontSize="Small"/>
+        </StackLayout>
+    </ScrollView>
+    
+</ContentPage>

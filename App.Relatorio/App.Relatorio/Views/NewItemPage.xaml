@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App.Relatorio.Views.NewItemPage"
+             Shell.PresentationMode="ModalAnimated"
+             Title="{Binding Cabecalho}"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             ios:Page.UseSafeArea="true" >
+          
+    <ContentPage.Content Command="{Binding CarregarCommand}">
+        <ScrollView>
+            <StackLayout Spacing="3" Padding="15" x:Name="FormularioRelatorio">
+                
+                    <!--<Label Text="Text" FontSize="Medium" />
+            <Entry Text="{Binding Text, Mode=TwoWay}" FontSize="Medium" />
+            <Label Text="Description" FontSize="Medium" />
+            <Editor Text="{Binding Description, Mode=TwoWay}" AutoSize="TextChanges" FontSize="Medium" Margin="0" />
+            
+
+            -->
+            <Label Text="Selecione o mês de serviço:" FontSize="Small"/>
+                <DatePicker x:Name="MesDeServico"
+                 Date="{Binding MesDeServico}"
+                    Format="MM/yyyy"
+                    Margin="30, 0, 0, 30"
+                    FontSize="Medium"
+                  IsVisible="{Binding DateToPickerVisibility}"/>
+
+            <Label Text="Horas" FontSize="Small" />
+            <Entry x:Name="txtHoras" Text ="{Binding TxtHoras, Mode=TwoWay}" Keyboard="Numeric"   FontSize="Medium" />
+
+            <Label Text="Publicações" FontSize="Small"  />
+                <Entry x:Name="txtPublicacoes" Text="{Binding TxtPublicacoes, Mode=TwoWay}" Keyboard="Numeric"  FontSize="Medium" />
+
+
+            <Label Text="Videos" FontSize="Small"  />
+                <Entry x:Name="txtVideos" Text="{Binding TxtVideos, Mode=TwoWay}" Keyboard="Numeric"  FontSize="Medium" />
+
+
+            <Label Text="Revisitas" FontSize="Small"  />
+                <Entry x:Name="txtRevisitas" Text="{Binding TxtRevisitas, Mode=TwoWay}" Keyboard="Numeric"  FontSize="Medium" />
+
+         
+            <Label Text="Estudos" FontSize="Medium" />
+                <Entry x:Name="txtEstudos" FontSize="Medium" Text="{Binding TxtEstudos, Mode=TwoWay}" Keyboard="Numeric"  />
+            
+            <Label Text="Observações:" FontSize="Small" />
+                <Entry x:Name="txtObservacoes" FontSize="Small" Text="{Binding TxtObservacoes, Mode=TwoWay}"  />
+
+
+            <!--  <Editor Text="{Binding Description, Mode=TwoWay}" AutoSize="TextChanges" FontSize="Small"  Margin="0" /> -->
+
+                <Label Text="Saiu como pioneiro auxiliar esse mês:" FontSize="Small" />
+                <CheckBox x:Name="_checkPioneiro" IsChecked="{Binding CheckPioneiro}"  IsVisible="{Binding ChekBoxVisible , Mode=TwoWay}" />
+
+                <StackLayout Orientation="Horizontal" x:Name="stackBotoes">
+                <Button Text="Cancelar" Command="{Binding CancelCommand}" HorizontalOptions="FillAndExpand"></Button>
+                    <Button Text="{Binding BotaoRelatorio}" Command="{Binding SaveCommand}" HorizontalOptions="FillAndExpand"></Button>
+            </StackLayout>
+        </StackLayout>
+           
+        </ScrollView>
+    </ContentPage.Content>
+    
+</ContentPage>

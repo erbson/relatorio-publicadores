@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:App.Relatorio.ViewModels"  
+             x:Class="App.Relatorio.Views.AnotacoesPage"
+             xmlns:model="clr-namespace:App.Relatorio.Models"  
+             Title="{Binding Title}">
+    <ContentPage.Content>
+        <RefreshView x:DataType="local:AnotacoesViewModel" Command="{Binding LoadItemsCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}">
+            <StackLayout >
+                <ListView RowHeight="200" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="1,1,1,1" ItemsSource="{Binding ItemRelatorios}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid Padding="7">
+
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="2*"/>
+                                        <RowDefinition Height="2*"/>
+                                        <RowDefinition Height="2*"/>
+                                        <RowDefinition Height="2*"/>
+                                        <RowDefinition Height="2*"/>
+
+                                    </Grid.RowDefinitions>
+
+
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+
+                                    </Grid.ColumnDefinitions>
+                                    <StackLayout Padding="10" x:DataType="model:AnotacoesDoMEs">
+                                        <Label VerticalOptions="FillAndExpand" Text="{Binding MesExtenso}" Grid.Column="0" Grid.Row="0" FontSize="14" />
+                                        <Label HorizontalOptions="FillAndExpand" Text="{Binding Horas ,StringFormat='{}{0} Horas' }"  Grid.Column="0" Grid.Row="1" FontSize="12"/>
+                                        <Label HorizontalOptions="FillAndExpand" Text="{Binding Publicacoes ,StringFormat='{}{0} Publicações'}" Grid.Column="0" Grid.Row="2" FontSize="12"/>
+                                        <Label HorizontalOptions="FillAndExpand" Text="{Binding Videos,StringFormat='{}{0} Videos' }" Grid.Column="0" Grid.Row="3" FontSize="12"/>
+                                        <Label HorizontalOptions="FillAndExpand" Text="{Binding Revisitas,StringFormat='{}{0} Revisitas' }" Grid.Column="0" Grid.Row="4" FontSize="12"/>
+                                        <Label HorizontalOptions="FillAndExpand" Text="{Binding Observacao }" Grid.Column="0" Grid.Row="5" FontSize="12"/>
+
+
+                                    </StackLayout>
+                                       
+                                 
+                                    
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </RefreshView>
+    </ContentPage.Content>
+</ContentPage>

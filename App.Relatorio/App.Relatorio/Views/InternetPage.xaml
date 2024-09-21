@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App.Relatorio.Views.InternetPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Por favor Verique sua conexão com a internet, e tente novamente" FontSize="Medium"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            <Image Source="wifi_desligado.png" VerticalOptions="Center" HeightRequest="178" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
